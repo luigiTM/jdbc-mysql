@@ -1,4 +1,4 @@
-package bancoDeDados;
+package bancoDeDados.excexoes;
 
 public class BancoDeDadosException extends RuntimeException {
 

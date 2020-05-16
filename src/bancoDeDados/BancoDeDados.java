@@ -4,8 +4,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
+
+import bancoDeDados.excexoes.BancoDeDadosException;
 
 public class BancoDeDados {
 
@@ -41,6 +45,26 @@ public class BancoDeDados {
 			return propridades;
 		} catch (IOException execao) {
 			throw new BancoDeDadosException(execao.getMessage());
+		}
+	}
+
+	public static void fecharDeclaracao(Statement declaracao) {
+		if (declaracao != null) {
+			try {
+				declaracao.close();
+			} catch (SQLException e) {
+				throw new BancoDeDadosException(e.getMessage());
+			}
+		}
+	}
+
+	public static void fecharResultado(ResultSet resultado) {
+		if (resultado != null) {
+			try {
+				resultado.close();
+			} catch (SQLException e) {
+				throw new BancoDeDadosException(e.getMessage());
+			}
 		}
 	}
 
