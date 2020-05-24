@@ -72,9 +72,9 @@ public class Programa {
 
 			Integer atualizacao1 = declaracaoTransacao.executeUpdate("UPDATE vendedor SET SalarioBase = 2090 WHERE IdDepartamento = 1");
 
-			if (true) {
-				throw new SQLException("Simulacao de erro");
-			}
+//			if (true) {
+//				throw new SQLException("Simulacao de erro");
+//			}
 
 			Integer atualizacao2 = declaracaoTransacao.executeUpdate("UPDATE vendedor SET SalarioBase = 3090 WHERE IdDepartamento = 2");
 			conexao.commit();
